@@ -6,9 +6,6 @@
     --light-gray: #f8f9fa;
     --medium-gray: #e9ecef;
     --dark-gray: #495057;
-    --shadow: 0 10px 30px rgba(0, 155, 46, 0.08);
-    --shadow-hover: 0 15px 40px rgba(0, 155, 46, 0.15);
-    --transition: all 0.3s ease;
 }
 
 * {
@@ -27,7 +24,6 @@ body {
 
 .page-wrapper {
     display: flex;
-    flex-direction: column;
     min-height: 100vh;
 }
 
@@ -49,50 +45,19 @@ body {
     background: white;
     border-radius: 20px;
     padding: 50px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     text-align: center;
-    position: relative;
-    transition: var(--transition);
     border: 1px solid var(--light-green);
 }
 
-.domain-card:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-5px);
-}
-
-.status-badge {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--primary-green);
-    color: white;
-    padding: 10px 25px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 5px 15px rgba(0, 155, 46, 0.3);
-}
-
 .domain-display {
-    margin: 30px 0 40px;
+    margin-bottom: 40px;
 }
 
 .domain-icon-large {
     font-size: 70px;
     color: var(--primary-green);
     margin-bottom: 20px;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
 }
 
 .domain-name {
@@ -104,54 +69,31 @@ body {
 }
 
 .domain-subtitle {
-    font-size: 18px;
-    color: var(--dark-gray);
-    font-weight: 400;
+    font-size: 24px;
+    color: var(--primary-green);
+    font-weight: 600;
 }
 
-.domain-features {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+.brand-description {
     margin: 40px 0;
-    flex-wrap: wrap;
+    padding: 30px;
+    background: var(--light-green);
+    border-radius: 15px;
+    text-align: left;
 }
 
-.feature {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.brand-description p {
+    margin-bottom: 15px;
     font-size: 16px;
     color: var(--dark-gray);
 }
 
-.feature i {
-    color: var(--primary-green);
-    font-size: 18px;
-}
-
-.price-info {
-    margin: 40px 0;
-    padding: 25px;
-    background: var(--light-green);
-    border-radius: 15px;
-    display: inline-block;
-}
-
-.price-label {
-    font-size: 18px;
-    color: var(--dark-gray);
-    margin-bottom: 8px;
-}
-
-.price-amount {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--primary-green);
+.brand-description p:last-child {
+    margin-bottom: 0;
 }
 
 .contact-section {
-    margin-top: 50px;
+    margin-top: 40px;
     padding-top: 40px;
     border-top: 1px solid var(--medium-gray);
 }
@@ -174,13 +116,14 @@ body {
     padding: 15px 30px;
     border-radius: 12px;
     background: var(--light-green);
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 .contact-email:hover {
     background: var(--primary-green);
     color: white;
     transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 155, 46, 0.2);
 }
 
 .contact-note {
@@ -188,14 +131,6 @@ body {
     font-size: 16px;
     color: var(--dark-gray);
     font-style: italic;
-}
-
-.footer {
-    padding: 25px 0;
-    text-align: center;
-    background: var(--primary-black);
-    color: white;
-    font-size: 14px;
 }
 
 @media (max-width: 768px) {
@@ -216,19 +151,12 @@ body {
         font-size: 50px;
     }
     
-    .domain-features {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
+    .brand-description {
+        padding: 20px;
     }
     
     .contact-email {
         font-size: 18px;
         padding: 12px 20px;
-    }
-    
-    .status-badge {
-        font-size: 14px;
-        padding: 8px 20px;
     }
 }
